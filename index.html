@@ -6,153 +6,89 @@
 <title>Living Hope Foundation</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#fff;}
 
-body {
-  background: #f5f7f6;
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  z-index:1000;
 }
-
-/* NAVBAR */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  z-index: 1000;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
+.menu-icon{display:none;font-size:28px;cursor:pointer;}
+.nav-links{display:flex;gap:20px;}
+.nav-links a{color:white;text-decoration:none;}
 
 /* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('images/banner.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
+.hero{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('images/banner.jpg') center/cover no-repeat;
+  display:flex;align-items:center;padding:0 8%;color:white;
 }
+.hero h1{font-size:60px;max-width:650px;}
+.hero p{margin:20px 0;max-width:500px;}
+.btn{padding:14px 28px;background:#27ae60;color:white;text-decoration:none;margin:5px;border-radius:4px;display:inline-block;}
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  animation: fadeDown 1s ease;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  animation: fadeUp 1.5s ease;
-}
-
-.btn {
-  padding: 12px 25px;
-  background: #27ae60;
-  color: white;
-  text-decoration: none;
-  margin: 5px;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* SECTIONS */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
+/* SECTION */
+.section{padding:100px 8%;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.split img{width:100%;border-radius:10px;}
 
 /* IMPACT */
-.impact .grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-}
-
-.impact h3 {
-  color: #27ae60;
-  font-size: 30px;
-}
+.impact{background:#f5f7f6;text-align:center;}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;}
+.impact-grid h2{color:#27ae60;}
 
 /* PROGRAMS */
-.programs .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.card{background:#f5f7f6;padding:25px;border-radius:10px;}
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+/* CAMPAIGNS */
+.campaign-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.campaign{position:relative;height:300px;border-radius:10px;overflow:hidden;}
+.campaign img{width:100%;height:100%;object-fit:cover;}
+.overlay{position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:white;}
 
-.card:hover {
-  transform: translateY(-10px);
-}
+/* WHY */
+.why{background:#111;color:white;text-align:center;}
 
-/* DONATION */
-.donate {
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-}
+/* TESTIMONIAL */
+.testimonials{background:#f5f7f6;}
+.testimonial{margin-top:20px;}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.blog{background:#f5f7f6;padding:20px;border-radius:10px;}
+
+/* PARTNERS */
+.partners{text-align:center;}
+.partner-logos{display:flex;justify-content:center;gap:30px;margin-top:20px;flex-wrap:wrap;}
+
+/* DONATE */
+.donate{background:linear-gradient(135deg,#2ecc71,#27ae60);color:white;text-align:center;}
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #222;
-  color: white;
-}
-
-/* ANIMATIONS */
-@keyframes fadeDown {
-  from {opacity:0; transform: translateY(-30px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform: translateY(30px);}
-  to {opacity:1; transform: translateY(0);}
-}
+footer{background:#111;color:white;text-align:center;padding:30px;}
 
 /* MOBILE */
 @media(max-width:768px){
-  .impact .grid,
-  .programs .grid {
-    grid-template-columns: 1fr;
+  .menu-icon{display:block;}
+  .nav-links{
+    position:absolute;top:70px;right:0;background:#000;
+    flex-direction:column;padding:20px;display:none;
   }
-
-  .hero h1 {
-    font-size: 30px;
+  .nav-links.active{display:flex;}
+  .split,.impact-grid,.program-grid,.campaign-grid,.blog-grid{
+    grid-template-columns:1fr;
   }
+  .hero h1{font-size:32px;}
 }
 </style>
 </head>
@@ -161,78 +97,113 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <h2>Living Hope</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Programs</a>
-    <a href="#">Contact</a>
-  </div>
+<h2>Living Hope</h2>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+<div class="nav-links" id="navLinks">
+<a href="#">Home</a>
+<a href="#">Programs</a>
+<a href="#">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>Give Hope. Change Lives.</h1>
-    <p>Supporting widows, children and communities in need.</p>
-    <a href="#" class="btn">Donate</a>
-    <a href="#" class="btn">Learn More</a>
-  </div>
+<div>
+<h1>Give Hope. Change Lives.</h1>
+<p>Supporting widows, children and vulnerable communities.</p>
+<a href="#" class="btn">Donate</a>
+<a href="#" class="btn">Volunteer</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section split">
+<img src="images/img1.jpg">
+<div>
+<h2>About Us</h2>
+<p>We provide food, education, and care to the less privileged.</p>
+</div>
 </section>
 
 <!-- IMPACT -->
-<section class="impact">
-  <h2>Our Impact</h2>
-  <div class="grid">
-    <div><h3>1000+</h3><p>Lives</p></div>
-    <div><h3>200+</h3><p>Volunteers</p></div>
-    <div><h3>15+</h3><p>Communities</p></div>
-    <div><h3>10+</h3><p>Projects</p></div>
-  </div>
+<section class="section impact">
+<h2>Our Impact</h2>
+<div class="impact-grid">
+<div><h2>1000+</h2><p>Lives</p></div>
+<div><h2>200+</h2><p>Volunteers</p></div>
+<div><h2>15+</h2><p>Communities</p></div>
+<div><h2>10+</h2><p>Projects</p></div>
+</div>
 </section>
 
 <!-- PROGRAMS -->
-<section class="programs">
-  <h2>Our Programs</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Food Support</h3>
-      <p>Providing meals to the needy.</p>
-    </div>
-    <div class="card">
-      <h3>Education</h3>
-      <p>Helping children stay in school.</p>
-    </div>
-    <div class="card">
-      <h3>Community Care</h3>
-      <p>Supporting vulnerable groups.</p>
-    </div>
-  </div>
+<section class="section">
+<h2>Programs</h2>
+<div class="program-grid">
+<div class="card"><h3>Food Support</h3></div>
+<div class="card"><h3>Education</h3></div>
+<div class="card"><h3>Outreach</h3></div>
+</div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section class="section">
+<h2>Campaigns</h2>
+<div class="campaign-grid">
+<div class="campaign"><img src="images/img1.jpg"><div class="overlay">Food Aid</div></div>
+<div class="campaign"><img src="images/img2.jpg"><div class="overlay">Education</div></div>
+<div class="campaign"><img src="images/img3.jpg"><div class="overlay">Outreach</div></div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="section why">
+<h2>Why It Matters</h2>
+<p>Millions still lack basic needs. Your help can change that.</p>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section testimonials">
+<h2>Testimonials</h2>
+<div class="testimonial">“They changed my life.”</div>
+<div class="testimonial">“A truly impactful foundation.”</div>
+</section>
+
+<!-- BLOG -->
+<section class="section">
+<h2>Latest Updates</h2>
+<div class="blog-grid">
+<div class="blog">Feeding Program Success</div>
+<div class="blog">School Outreach</div>
+<div class="blog">Community Impact</div>
+</div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section partners">
+<h2>Our Partners</h2>
+<div class="partner-logos">
+<span>NGO 1</span>
+<span>NGO 2</span>
+<span>NGO 3</span>
+</div>
 </section>
 
 <!-- DONATE -->
-<section class="donate">
-  <h2>Make a Difference Today</h2>
-  <p>Your support changes lives.</p>
-  <a href="#" class="btn">Donate Now</a>
+<section class="section donate">
+<h2>Make a Difference</h2>
+<p>Your support changes lives.</p>
+<a href="#" class="btn">Donate Now</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© Living Hope Foundation</p>
+<p>© Living Hope Foundation</p>
 </footer>
 
 <script>
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.style.opacity = "1";
-      sec.style.transform = "translateY(0)";
-    }
-  });
-});
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
 </script>
 
 </body>
