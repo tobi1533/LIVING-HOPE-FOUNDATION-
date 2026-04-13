@@ -6,66 +6,70 @@
 <title>Living Hope Foundation</title>
 
 <style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+}
+
+body {
   background: #f5f7f6;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 /* HERO */
 .hero {
-  position: relative;
-  height: 90vh;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('images/banner.jpg') center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;
-}
-
-/* SINGLE background image */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('images/banner.jpg') center/cover no-repeat;
-  z-index: -2;
-  transform: scale(1);
-  animation: slowZoom 15s ease-in-out infinite alternate;
-}
-
-/* overlay */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: -1;
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-  animation: fadeInDown 1.5s ease;
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: fadeDown 1s ease;
 }
 
 .hero p {
   font-size: 18px;
-  animation: fadeInUp 1.5s ease;
+  margin-bottom: 20px;
+  animation: fadeUp 1.5s ease;
 }
 
-/* BUTTON */
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 22px;
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  padding: 12px 25px;
+  background: #27ae60;
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  margin: 5px;
+  border-radius: 5px;
   transition: 0.3s;
-  animation: fadeInUp 2s ease;
 }
 
 .btn:hover {
@@ -74,188 +78,148 @@ body {
 
 /* SECTIONS */
 section {
-  padding: 60px 20px;
-  max-width: 1000px;
+  padding: 80px 20px;
+  max-width: 1100px;
   margin: auto;
   opacity: 0;
   transform: translateY(40px);
-  transition: 1s ease;
+  transition: 1s;
 }
 
-/* ABOUT */
-.about {
+/* IMPACT */
+.impact .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
 
-/* SERVICES */
-.services .grid {
+.impact h3 {
+  color: #27ae60;
+  font-size: 30px;
+}
+
+/* PROGRAMS */
+.programs .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.grid div {
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* DONATION */
+.donate {
   background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
-  padding: 30px;
-  border-radius: 12px;
   text-align: center;
-  font-weight: bold;
-  transition: 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-/* glowing animation */
-.grid div::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: rgba(255,255,255,0.1);
-  top: -50%;
-  left: -50%;
-  transform: rotate(25deg);
-  animation: shine 3s infinite;
-}
-
-.grid div:hover {
-  transform: translateY(-5px) scale(1.03);
-}
-
-/* GALLERY */
-.gallery img {
-  width: 100%;
-  margin-top: 12px;
-  border-radius: 10px;
-  transition: 0.4s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* TEAM */
-.team {
-  background: #eafaf1;
   border-radius: 10px;
 }
 
-/* CONTACT */
-.contact {
+/* FOOTER */
+footer {
   text-align: center;
-}
-
-/* WhatsApp button */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
+  padding: 20px;
+  background: #222;
   color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-  animation: pulse 2s infinite;
 }
 
 /* ANIMATIONS */
-@keyframes slowZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.08); }
+@keyframes fadeDown {
+  from {opacity:0; transform: translateY(-30px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(30px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shine {
-  0% { transform: translateX(-100%) rotate(25deg); }
-  100% { transform: translateX(100%) rotate(25deg); }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .services .grid {
+/* MOBILE */
+@media(max-width:768px){
+  .impact .grid,
+  .programs .grid {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- HERO -->
-<header class="hero">
+<!-- NAV -->
+<nav>
+  <h2>Living Hope</h2>
   <div>
-    <h1>Living Hope Foundation</h1>
-    <p>Helping Widows, Children & the Less Privileged</p>
-    <a href="#" class="btn">Support Us</a>
+    <a href="#">Home</a>
+    <a href="#">Programs</a>
+    <a href="#">Contact</a>
   </div>
-</header>
+</nav>
 
-<!-- ABOUT -->
-<section class="about">
-  <h2>About Us</h2>
-  <p>
-    Living Hope Foundation supports widows, elderly individuals,
-    children and less privileged people in our communities.
-  </p>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Give Hope. Change Lives.</h1>
+    <p>Supporting widows, children and communities in need.</p>
+    <a href="#" class="btn">Donate</a>
+    <a href="#" class="btn">Learn More</a>
+  </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services">
-  <h2>Who We Help</h2>
+<!-- IMPACT -->
+<section class="impact">
+  <h2>Our Impact</h2>
   <div class="grid">
-    <div>Widows</div>
-    <div>Elderly</div>
-    <div>Children</div>
-    <div>Orphans</div>
+    <div><h3>1000+</h3><p>Lives</p></div>
+    <div><h3>200+</h3><p>Volunteers</p></div>
+    <div><h3>15+</h3><p>Communities</p></div>
+    <div><h3>10+</h3><p>Projects</p></div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery">
-  <h2>Our Work</h2>
-  <img src="images/img1.jpg">
-  <img src="images/img2.jpg">
-  <img src="images/img3.jpg">
+<!-- PROGRAMS -->
+<section class="programs">
+  <h2>Our Programs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Food Support</h3>
+      <p>Providing meals to the needy.</p>
+    </div>
+    <div class="card">
+      <h3>Education</h3>
+      <p>Helping children stay in school.</p>
+    </div>
+    <div class="card">
+      <h3>Community Care</h3>
+      <p>Supporting vulnerable groups.</p>
+    </div>
+  </div>
 </section>
 
-<!-- TEAM -->
-<section class="team">
-  <h2>Leadership</h2>
-  <p>Founder: God Almighty</p>
-  <p>Chairman: Maj. Gen. SO Olabanji (Rtd)</p>
-  <p>Director: Akeem Fatai</p>
-</section>
-
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact / Donate</h2>
-  <p>Support our mission and help change lives.</p>
+<!-- DONATE -->
+<section class="donate">
+  <h2>Make a Difference Today</h2>
+  <p>Your support changes lives.</p>
   <a href="#" class="btn">Donate Now</a>
 </section>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/234XXXXXXXXXX" class="whatsapp">💬</a>
+<!-- FOOTER -->
+<footer>
+  <p>© Living Hope Foundation</p>
+</footer>
 
 <script>
 const sections = document.querySelectorAll("section");
@@ -263,9 +227,7 @@ const sections = document.querySelectorAll("section");
 window.addEventListener("scroll", () => {
   sections.forEach(sec => {
     const top = sec.getBoundingClientRect().top;
-    const screenHeight = window.innerHeight;
-
-    if (top < screenHeight - 100) {
+    if (top < window.innerHeight - 100) {
       sec.style.opacity = "1";
       sec.style.transform = "translateY(0)";
     }
@@ -274,4 +236,4 @@ window.addEventListener("scroll", () => {
 </script>
 
 </body>
-  </html>
+</html>
