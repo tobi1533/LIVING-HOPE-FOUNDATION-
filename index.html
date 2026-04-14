@@ -7,7 +7,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:#fff;}
+body{background:#000;color:#fff;}
 
 /* NAV */
 nav{
@@ -17,13 +17,23 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.7);
   color:white;
   z-index:1000;
 }
 .menu-icon{display:none;font-size:28px;cursor:pointer;}
 .nav-links{display:flex;gap:20px;}
 .nav-links a{color:white;text-decoration:none;}
+
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo img{
+  height:40px;
+}
 
 /* HERO */
 .hero{
@@ -37,21 +47,33 @@ nav{
 .btn{padding:14px 28px;background:#27ae60;color:white;text-decoration:none;margin:5px;border-radius:4px;display:inline-block;}
 
 /* SECTION */
-.section{padding:100px 8%;}
+.section{
+  padding:100px 8%;
+  background:#111;
+  color:white;
+}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .split img{width:100%;border-radius:10px;}
 
 /* IMPACT */
-.impact{background:#f5f7f6;text-align:center;}
+.impact{
+  background:#111;
+  text-align:center;
+}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;}
 .impact-grid h2{color:#27ae60;}
 
 /* PROGRAMS */
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
-.card{background:#f5f7f6;padding:25px;border-radius:10px;}
+.card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:10px;
+  color:white;
+  border:1px solid rgba(255,255,255,0.05);
+}
 
-/* CAMPAIGNS */
-/* CAMPAIGNS */
+/* CAMPAIGNS SLIDER */
 .campaign-section{
   background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
   url('LHF3.jpg') center/cover no-repeat;
@@ -72,8 +94,8 @@ nav{
 }
 
 .campaign{
-  min-width:250px;   /* controls size */
-  height:180px;      /* moderate height */
+  min-width:250px;
+  height:180px;
   border-radius:10px;
   overflow:hidden;
 }
@@ -84,20 +106,29 @@ nav{
   object-fit:cover;
 }
 
-/* animation */
 @keyframes scroll{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
 }
+
 /* WHY */
-.why{background:#111;color:white;text-align:center;}
+.why{background:#000;color:white;text-align:center;}
 
 /* TESTIMONIAL */
-.testimonials{background:#f5f7f6;}
+.testimonials{
+  background:#111;
+}
 .testimonial{margin-top:20px;}
 
-/* BLO,1fr);gap:20px;}
-.blog{background:#f5f7f6;padding:20px;border-radius:10px;}
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.blog{
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:10px;
+  color:white;
+  border:1px solid rgba(255,255,255,0.05);
+}
 
 /* PARTNERS */
 .partners{text-align:center;}
@@ -107,7 +138,7 @@ nav{
 .donate{background:linear-gradient(135deg,#2ecc71,#27ae60);color:white;text-align:center;}
 
 /* FOOTER */
-footer{background:#111;color:white;text-align:center;padding:30px;}
+footer{background:#000;color:white;text-align:center;padding:30px;}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -117,7 +148,7 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
     flex-direction:column;padding:20px;display:none;
   }
   .nav-links.active{display:flex;}
-  .split,.impact-grid,.program-grid,.campaign-grid,.blog-grid{
+  .split,.impact-grid,.program-grid,.blog-grid{
     grid-template-columns:1fr;
   }
   .hero h1{font-size:32px;}
@@ -129,8 +160,8 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
 
 <!-- NAV -->
 <nav>
-<div style="display:flex;align-items:center;gap:10px;">
-  <img src="logo.jpg" style="height:75px;">
+<div class="logo">
+  <img src="logo.png">
   <h2>Living Hope Foundation</h2>
 </div>
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -156,7 +187,13 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
 <img src="LHF6.jpg">
 <div>
 <h2>About Us</h2>
-<p>We provide food, education, and care to the less privileged.</p>
+<p>
+Living Hope Foundation is a community-driven non-profit organization committed to improving the lives of vulnerable individuals and families. Our work focuses on providing access to basic needs such as food, education, and essential support services for widows, children, and underserved communities.
+
+Founded on the principles of compassion, dignity, and sustainability, we believe that every individual deserves an opportunity to live a better life. Through our outreach programs, we empower people with practical skills, support education for children, and provide relief to those facing hardship.
+
+We work closely with local communities to understand their challenges and create lasting solutions that promote self-reliance and long-term development. Our mission is not just to give aid, but to restore hope, build resilience, and create opportunities for a brighter future.
+</p>
 </div>
 </section>
 
@@ -182,26 +219,29 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
 </section>
 
 <!-- CAMPAIGNS -->
-<section class="section">
+<section class="section campaign-section">
 <h2>OUTREACH</h2>
+
 <div class="campaign-slider">
   <div class="campaign-track">
-    
-    <div class="campaign"><img src="LHF1.jpg"></div>
+
     <div class="campaign"><img src="LHF2.jpg"></div>
     <div class="campaign"><img src="LHF3.jpg"></div>
     <div class="campaign"><img src="LHF4.jpg"></div>
-    <div class="campaign"><img src="LHF5.jpg"></div>
-
-    <!-- duplicate for smooth loop -->
-    <div class="campaign"><img src="LHF1.jpg"></div>
     <div class="campaign"><img src="LHF2.jpg"></div>
-    <div class="campaign"><img src="LHF6.jpg"></div>
-    <div class="campaign"><img src="LHF7.jpg"></div>
-    <div class="campaign"><img src="LHF8.jpg"></div>
+    <div class="campaign"><img src="LHF3.jpg"></div>
+
+    <!-- duplicate -->
+    <div class="campaign"><img src="LHF2.jpg"></div>
+    <div class="campaign"><img src="LHF3.jpg"></div>
+    <div class="campaign"><img src="LHF4.jpg"></div>
+    <div class="campaign"><img src="LHF2.jpg"></div>
+    <div class="campaign"><img src="LHF3.jpg"></div>
 
   </div>
 </div>
+
+</section>
 
 <!-- WHY -->
 <section class="section why">
@@ -233,7 +273,6 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
 <span>FOUNDER:- GOD ALMIGHTY</span>
 <span>CHAIRMAN:- MAJ GEN SO Olabanji (rtd)</span>
 <span>DIRECTOR :- Akeem Fatai</span>
-
 </div>
 </section>
 
