@@ -109,6 +109,36 @@ nav{
 @keyframes scroll{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
+}.comments form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:500px;
+  margin-top:20px;
+}
+
+.comments input,
+.comments textarea{
+  padding:12px;
+  border:none;
+  border-radius:5px;
+  outline:none;
+}
+
+.comments textarea{
+  height:120px;
+}
+
+#commentList{
+  margin-top:40px;
+}
+
+.comment-box{
+  background:#1a1a1a;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:15px;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 /* WHY */
@@ -291,7 +321,29 @@ We work closely with local communities to understand their challenges and create
 function toggleMenu(){
 document.getElementById("navLinks").classList.toggle("active");
 }
+  <script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+/* COMMENT SYSTEM */
+document.getElementById("commentForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let message = document.getElementById("message").value;
+
+  let commentBox = document.createElement("div");
+  commentBox.classList.add("comment-box");
+
+  commentBox.innerHTML = "<strong>" + name + "</strong><p>" + message + "</p>";
+
+  document.getElementById("commentList").prepend(commentBox);
+
+  document.getElementById("commentForm").reset();
+});
 </script>
+
 
 </body>
 </html>
