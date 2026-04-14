@@ -28,7 +28,7 @@ nav{
 /* HERO */
 .hero{
   height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
   url('LHF3.jpg') center/cover no-repeat;
   display:flex;align-items:center;padding:0 8%;color:white;
 }
@@ -51,14 +51,16 @@ nav{
 .card{background:#f5f7f6;padding:25px;border-radius:10px;}
 
 /* CAMPAIGNS */
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+.campaign-section{
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
   url('LHF3.jpg') center/cover no-repeat;
-  display:flex;align-items:center;padding:0 8%;color:white;
-.campaign-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
-.campaign{position:relative;height:300px;border-radius:10px;overflow:hidden;}
-.campaign img{width:100%;height:100%;object-fit:cover;}
-.overlay{position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:white;}
-
+  color:white;
+}
+.campaign-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
 /* WHY */
 .why{background:#111;color:white;text-align:center;}
 
@@ -66,8 +68,7 @@ background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 .testimonials{background:#f5f7f6;}
 .testimonial{margin-top:20px;}
 
-/* BLOG */
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+/* BLO,1fr);gap:20px;}
 .blog{background:#f5f7f6;padding:20px;border-radius:10px;}
 
 /* PARTNERS */
@@ -101,7 +102,7 @@ footer{background:#111;color:white;text-align:center;padding:30px;}
 <!-- NAV -->
 <nav>
 <div style="display:flex;align-items:center;gap:10px;">
-  <img src="logo.png" style="height:75px;">
+  <img src="logo.jpg" style="height:75px;">
   <h2>Living Hope Foundation</h2>
 </div>
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
