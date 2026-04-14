@@ -178,21 +178,37 @@ footer{background:#000;text-align:center;padding:30px;}
 </div>
 </section>
 
+<!-- ONLY showing modified parts so you don’t lose anything -->
+
+<!-- ABOUT SECTION (UPDATED TEXT ONLY) -->
 <section class="section split">
 <img src="LHF6.jpg">
 <div>
 <h2>About Us</h2>
-<p>We provide food, education, and care to the less privileged.</p>
+<p>
+Living Hope Foundation is a humanitarian and community-driven non-profit organization dedicated to restoring dignity, hope, and opportunity to vulnerable individuals and underserved communities.
+
+Established on the 1st of December 2014, the foundation has remained committed to supporting widows, children, the elderly, and the less privileged through impactful outreach programs and sustainable development initiatives.
+
+At Living Hope Foundation, we believe that compassion should be translated into action. Our work focuses on providing essential support such as food distribution, educational assistance, healthcare outreach, and empowerment programs designed to uplift individuals and families facing hardship.
+
+Through consistent community engagement, we have reached and supported hundreds of individuals across various communities. Our initiatives are not just about temporary relief, but about creating long-term solutions that promote self-reliance, growth, and improved quality of life.
+
+We work hand-in-hand with volunteers, partners, and local leaders to identify real needs and deliver meaningful interventions. From caring for widows and supporting the elderly, to nurturing children and assisting the most vulnerable, our mission is to ensure that no one is left behind.
+
+Driven by a strong sense of purpose and guided by values of love, service, and integrity, Living Hope Foundation continues to make a lasting impact—one life, one family, and one community at a time.
+</p>
 </div>
 </section>
 
+<!-- IMPACT SECTION (UPDATED FOR ANIMATION) -->
 <section class="section impact">
 <h2>Our Impact</h2>
 <div class="impact-grid">
-<div><h2>1000+</h2><p>Lives</p></div>
-<div><h2>200+</h2><p>Volunteers</p></div>
-<div><h2>15+</h2><p>Communities</p></div>
-<div><h2>10+</h2><p>Projects</p></div>
+<div><h2 class="counter" data-target="1000">0</h2><p>Lives</p></div>
+<div><h2 class="counter" data-target="200">0</h2><p>Volunteers</p></div>
+<div><h2 class="counter" data-target="15">0</h2><p>Communities</p></div>
+<div><h2 class="counter" data-target="10">0</h2><p>Projects</p></div>
 </div>
 </section>
 
@@ -313,6 +329,30 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
   loadComments();
+});
+  <!-- ADD THIS INSIDE YOUR EXISTING SCRIPT (at the bottom, DO NOT REMOVE YOUR CODE) -->
+
+/* COUNTER ANIMATION */
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  counter.innerText = '0';
+
+  const updateCounter = () => {
+    const target = +counter.getAttribute('data-target');
+    const current = +counter.innerText;
+
+    const increment = target / 100;
+
+    if(current < target){
+      counter.innerText = `${Math.ceil(current + increment)}`;
+      setTimeout(updateCounter, 30);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  updateCounter();
 });
 </script>
 
