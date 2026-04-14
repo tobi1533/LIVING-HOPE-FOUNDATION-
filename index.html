@@ -206,6 +206,8 @@ footer{background:#000;text-align:center;padding:30px;}
 }
 </style>
 </head>
+
+<body>
   <div class="contact-float">
 
   <a href="https://wa.me/2347034447700" target="_blank" class="icon whatsapp">
@@ -229,15 +231,13 @@ footer{background:#000;text-align:center;padding:30px;}
   </a>
 
   </div>
-<body>
-
 <nav>
 <div class="logo">
   <img src="logo.png">
   <h2>Living Hope Foundation</h2>
 </div>
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
-<ul class="menu">
+<ul class="nav-links" id="navLinks">
   <li><a href="index.html">Home</a></li>
   <li><a href="about.html">About</a></li>
   <li><a href="contact.html">Contact</a></li>
@@ -412,8 +412,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   loadComments();
 });
-  <!-- ADD THIS INSIDE YOUR EXISTING SCRIPT (at the bottom, DO NOT REMOVE YOUR CODE) -->
-
+  
 /* COUNTER ANIMATION */
 const counters = document.querySelectorAll('.counter');
 
