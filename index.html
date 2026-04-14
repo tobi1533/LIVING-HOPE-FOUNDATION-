@@ -151,8 +151,69 @@ footer{background:#000;text-align:center;padding:30px;}
   }
   .hero h1{font-size:32px;}
 }
+/* FLOATING CONTACT ICONS */
+.contact-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
+}
+
+.contact-float .icon{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#1a1a1a;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+.contact-float .icon img{
+  width:26px;
+  height:26px;
+}
+
+.contact-float .icon:hover{
+  transform:scale(1.15);
+}
+
+/* BRAND COLORS ON HOVER */
+.whatsapp:hover{background:#25D366;}
+.facebook:hover{background:#1877F2;}
+.instagram:hover{background:#E1306C;}
+.email:hover{background:#EA4335;}
+.phone:hover{background:#27ae60;}
 </style>
 </head>
+  <div class="contact-float">
+
+  <a href="#" target="_blank" class="icon whatsapp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  </a>
+
+  <a href="#" target="_blank" class="icon facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+  </a>
+
+  <a href="#" target="_blank" class="icon instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+  </a>
+
+  <a href="mailto:youremail@example.com" class="icon email">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+  </a>
+
+  <a href="tel:+2340000000000" class="icon phone">
+    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
+  </a>
+
+  </div>
 
 <body>
 
