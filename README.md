@@ -39,7 +39,7 @@ foundation-website/
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/foundation-website.git
+git clone https://tobi1533.github.io/LIVING-HOPE-FOUNDATION-/?#
 
 2. Open the project folder
 
