@@ -328,6 +328,7 @@ We work closely with local communities to understand their challenges and create
 </footer>
 
 <script>
+<script>
 function toggleMenu(){
   document.getElementById("navLinks").classList.toggle("active");
 }
@@ -338,14 +339,13 @@ function loadComments(){
   let commentList = document.getElementById("commentList");
   commentList.innerHTML = "";
 
-  comments.forEach((c, index) => {
+  comments.forEach((c) => {
     let div = document.createElement("div");
     div.classList.add("comment-box");
 
     div.innerHTML = `
       <strong>${c.name}</strong>
       <p>${c.message}</p>
-      <button onclick="deleteComment(${index})" style="margin-top:10px;background:red;color:white;border:none;padding:5px 10px;border-radius:4px;cursor:pointer;">Delete</button>
     `;
 
     commentList.appendChild(div);
@@ -367,14 +367,6 @@ document.getElementById("commentForm").addEventListener("submit", function(e){
   this.reset();
   loadComments();
 });
-
-/* DELETE COMMENT */
-function deleteComment(index){
-  let comments = JSON.parse(localStorage.getItem("comments")) || [];
-  comments.splice(index, 1);
-  localStorage.setItem("comments", JSON.stringify(comments));
-  loadComments();
-}
 
 /* RUN ON LOAD */
 window.onload = loadComments;
